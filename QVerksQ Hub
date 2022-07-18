@@ -1,0 +1,53 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("QVerksQ Gui Sword Simulator", "Midnight")
+
+local WeaponSim2 = Window:NewTab("WeaponSim2")
+local WeaponSim2Section = WeaponSim2:NewSection("WeaponSim2")
+
+local Credits = Window:NewTab("Credits")
+local CreditsSection = Credits:NewSection("Credits")
+
+CreditsSection:NewButton("Gui and Scripting Was Made By QVerksQ", "Made By QVerksQ", function()
+end)
+
+
+
+WeaponSim2Section:NewButton("RblxScripts Slower AutoFarm", "Automatically Gives you power", function()
+    getgenv().farm = true
+ if getgenv().farm == true then 
+     while wait() do 
+         for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+         tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+end
+         game:GetService("Players").LocalPlayer.Character.sword.Handle.pr.RemoteEvent:FireServer()
+
+         
+     end
+     end
+end)
+
+
+WeaponSim2Section:NewButton("QVerksQ Fast AutoFarm!", "Automatically Gains Insanly Fast Power", function()
+
+-- Use Commands Farm and Unfarm To Farm and Unfarm
+--Script Was Made By QVerksQ
+-- Weapon Simulator 2 Script (UNDETECTED)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/QVerksQ/QVerksQ/main/QVerksQ%20Hub"))()
+end)
+
+
+
+local A_1 = game.Players.LocalPlayer.name.." Has Loaded QVerksQ Hub Thanks For Using!"-----message here
+	local A_2 = "All"
+	local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+	Event:FireServer(A_1, A_2)
+
+
+CreditsSection:NewKeybind("Press F To Close Gui", "F To Close Gui", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+
